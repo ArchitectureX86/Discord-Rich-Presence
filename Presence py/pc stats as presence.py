@@ -40,5 +40,5 @@ while True:
             buttons=[{"label": f"Check out Pypresence", "url": f"{PyPi}pypresence/"},
                     {"label": f"Check out Psutil", "url": f"{PyPi}psutil/"}]
         )
-    print(f"{Git}/Desktop/{SysPr}.png",)
+
     time.sleep(5)
