@@ -7,7 +7,8 @@ import platform
 import os
 import socket
 
-Git = "https://raw.githubusercontent.com/ArchitectureX86/Discord-Rich-Presence/refs/heads/main/Presence%20py/assets"
+Git = "https://raw.githubusercontent.com/ArchitectureX86/Discord-Rich-Presence/refs/heads/main"
+GitAss = f"{Git}/Presence%20py/assets"
 PyPi = "https://pypi.org/project/"
 SysPr = platform.release()
 SysInfo = f"{platform.system()} {SysPr} {os.name}"
@@ -29,16 +30,16 @@ while True:
     mem = f"{int(psutil.virtual_memory().percent)}%"
 # Show as "Playing"
     RPC.update(
-            large_image = f"{Git}/Desktop/{SysPr}.png",
+            large_image = f"{GitAss}/Desktop/{SysPr}.png",
             large_text = f"{SysName}.",
-            small_image = f"{Git}/Info/{SysPr}i.png",
+            small_image = f"{GitAss}/Info/{SysPr}i.png",
             small_text = f"{PyVer}.",
             name = f"{SysInfo}.",
             details = f"{DualVer}.",
             state =  f"Cpu: {cpu} | Ram: {mem}",
             start = int(start_time),
-            buttons=[{"label": f"This presence on github:", "url": f"https://github.com/ArchitectureX86/Discord-Rich-Presence"},
-                    {"label": f"Check out Pypresence", "url": f"{PyPi}pypresence/"}]
+            buttons=[{"label": f"This presence on github:", "url": f"{Git}"},
+                    {"label": f"Check out Pypresence", "url": f"{PyPi}"}]
         )
 
     time.sleep(5)
