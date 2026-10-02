@@ -1,7 +1,6 @@
 from pypresence import Presence
 from pypresence.types import ActivityType, StatusDisplayType
 import pypresence
-import pytest
 import time
 import psutil
 import platform
@@ -25,22 +24,21 @@ RPC.connect()
 
 start_time = (time.time())
 
-def test_example():
-    while True:
-        cpu = f"{int(psutil.cpu_percent(interval=None))}%"
-        mem = f"{int(psutil.virtual_memory().percent)}%"
-    # Show as "Playing"
-        RPC.update(
-                large_image = f"{Git}/Desktop/{SysPr}.png",
-                large_text = f"{SysName}.",
-                small_image = f"{Git}/Info/{SysPr}i.png",
-                small_text = f"{PyVer}.",
-                name = f"{SysInfo}.",
-                details = f"{DualVer}.",
-                state =  f"Cpu: {cpu} | Ram: {mem}",
-                start = int(start_time),
-                buttons=[{"label": f"This presence on github:", "url": f"https://github.com/ArchitectureX86/Discord-Rich-Presence"},
-                        {"label": f"Check out Pypresence", "url": f"{PyPi}pypresence/"}]
-            )
+while True:
+    cpu = f"{int(psutil.cpu_percent(interval=None))}%"
+    mem = f"{int(psutil.virtual_memory().percent)}%"
+# Show as "Playing"
+    RPC.update(
+            large_image = f"{Git}/Desktop/{SysPr}.png",
+            large_text = f"{SysName}.",
+            small_image = f"{Git}/Info/{SysPr}i.png",
+            small_text = f"{PyVer}.",
+            name = f"{SysInfo}.",
+            details = f"{DualVer}.",
+            state =  f"Cpu: {cpu} | Ram: {mem}",
+            start = int(start_time),
+            buttons=[{"label": f"This presence on github:", "url": f"https://github.com/ArchitectureX86/Discord-Rich-Presence"},
+                    {"label": f"Check out Pypresence", "url": f"{PyPi}pypresence/"}]
+        )
 
-        time.sleep(5)
+    time.sleep(5)
