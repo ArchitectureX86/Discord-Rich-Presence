@@ -9,7 +9,7 @@ import socket
 
 Git = "https://raw.githubusercontent.com/ArchitectureX86/Discord-Rich-Presence/refs/heads/main"
 GitAss = f"{Git}/Presence%20py/assets"
-PyPi = "https://pypi.org/project/"
+PyPi = "https://pypi.org/project"
 SysPr = platform.release()
 SysInfo = f"{platform.system()} {SysPr} {os.name}"
 SysName = f"{socket.gethostname()}"
@@ -39,7 +39,7 @@ while True:
             state =  f"Cpu: {cpu} | Ram: {mem}",
             start = int(start_time),
             buttons=[{"label": f"This presence on github:", "url": f"{Git}"},
-                    {"label": f"Check out Pypresence", "url": f"{PyPi}"}]
+                    {"label": f"Check out Pypresence", "url": f"{PyPi}/pypresence"}]
         )
 
     time.sleep(5)
